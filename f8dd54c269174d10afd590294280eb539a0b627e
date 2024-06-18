@@ -1,0 +1,149 @@
+[33mcommit bb87accd08a876a3f5c32373668752ecd4b9ce7b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcountdown[m[33m)[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sat Apr 13 05:51:36 2024 +0200
+
+    A dejado de funcionar, solo hace cuenta atras
+
+[33mcommit f8dd54c269174d10afd590294280eb539a0b627e[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Fri Apr 12 13:10:05 2024 +0200
+
+    Funciona sin titleID
+
+[33mcommit 5a0139d5445eba8a98ebb8f3f60dc76f62c2fded[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Fri Mar 29 01:21:45 2024 +0100
+
+    CountDown 01
+
+[33mcommit 7b7766c11d35c758ac48d81c3ba93b56ddbbe078[m[33m ([m[1;32mmaster[m[33m, [m[1;32mGraficaDatosUsuario[m[33m)[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Wed Mar 27 08:52:25 2024 +0100
+
+    Exportar BD 04 final
+
+[33mcommit 96d822923b3c8fe5b3e5fbbd5fd6cc4bbf8942b4[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Tue Mar 26 23:59:27 2024 +0100
+
+    Exportar BD 03
+
+[33mcommit 4f08469eed40a95cebdf5ed14f4039564b4fbb1b[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Tue Mar 26 23:08:00 2024 +0100
+
+    Exportar BD
+
+[33mcommit a3f41ca6122e4e7969d4b711ef9b965764000ad0[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sun Mar 24 18:52:18 2024 +0100
+
+    Clase aidFuns
+
+[33mcommit 34668bd2f1a8b5f087dc8579ede48bbfcc025d21[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sun Mar 24 10:21:00 2024 +0100
+
+    Mostrar rutas y add por user id, falta revisar los filtros
+
+[33mcommit a675a201286b885ea84464f6a9255168987a7450[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sat Mar 23 02:55:48 2024 +0100
+
+    ID usuario pasado OK
+
+[33mcommit 84d8a2c640c24c24aadd3ddae51206298bc5a10e[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sat Mar 23 02:51:00 2024 +0100
+
+    ID usuario pasado OK
+
+[33mcommit 5a0023b2b17b0f80991db6d717ab7f69a5c639ee[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Fri Mar 22 00:28:16 2024 +0100
+
+    Principal con la grafica incluida
+
+[33mcommit cbddf78ab7ab22965e472788935e4d8bb56a8d74[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Thu Mar 21 23:47:46 2024 +0100
+
+    Base de datos 2 creada con exito
+
+[33mcommit 8f6cd286e07f0eaa5e6723aab5aa521620562094[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Thu Mar 21 23:35:28 2024 +0100
+
+    Base de datos 2 creada con exito
+
+[33mcommit c66159ca89aac603b1558a178e97239b8097f8e1[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Thu Mar 21 16:02:17 2024 +0100
+
+    Creacion login 06 error
+
+[33mcommit a94b5bdb069026e864b197cd0c996b1e0c62bb19[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Thu Mar 21 12:42:37 2024 +0100
+
+    Creacion login 05 error
+
+[33mcommit d58129823cd20dfae1a88ec5950703251069dfca[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Wed Mar 20 22:59:06 2024 +0100
+
+    Creacion login 04
+
+[33mcommit da6c3fb247a8777bba977560b444e2accbb50675[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Wed Mar 20 12:48:06 2024 +0100
+
+    Creacion login 03
+
+[33mcommit f8ade72070c89aa37def5e0957c99800834a473a[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Wed Mar 20 11:16:12 2024 +0100
+
+    Creacion login 02
+
+[33mcommit 26c49f90c49af556693582d25c52ca4e177d87b6[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Wed Mar 20 00:15:01 2024 +0100
+
+    Creacion xml signup
+
+[33mcommit ff212448eed00f7a7b8c5b51cf21408164a3bc66[m[33m ([m[1;31morigin/CreacionGrafica[m[33m, [m[1;32mHoloGraph[m[33m)[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sun Mar 17 23:31:54 2024 +0100
+
+    Ultima de graficas
+
+[33mcommit c90a2cb9fa35e0e3bf765f149324ee4a5b0c71d0[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sat Mar 16 01:51:50 2024 +0100
+
+    Creacion Grafica 03 AlertDialog Finalizado
+
+[33mcommit 92097e21c1abb778783a1560ba7a7605c396eb98[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sat Mar 16 01:27:20 2024 +0100
+
+    Creacion Grafica 02 AlertDialog
+
+[33mcommit f80439d9299e3fdbe839ae0719a909836ec2b1a7[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Sat Mar 16 00:47:25 2024 +0100
+
+    Creacion Grafica 01 Inicio
+
+[33mcommit 3cb24dc1988b4da960b433a1688fb43e211a965b[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Fri Mar 15 12:02:34 2024 +0100
+
+    Inicio desarrollo grafica
+
+[33mcommit 889353b2e42c3206226791482239547705dc89c9[m
+Author: Noe <noe.m.garc@gmail.com>
+Date:   Fri Mar 15 00:37:01 2024 +0100
+
+    Inicio repositorio

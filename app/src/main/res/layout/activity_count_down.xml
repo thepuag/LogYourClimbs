@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/color2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <Spinner
+                android:id="@+id/sWorksTitles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTraining"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                    android:layout_marginStart="14dp"
+                    android:id="@+id/tvTraining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="22sp"
+                    android:text="@string/training"
+                    app:layout_constraintEnd_toStartOf="@id/sWorksTitles"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvWrokName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            app:layout_constraintTop_toBottomOf="@id/cvSpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/color2">
+
+        <TextView
+                android:layout_marginStart="14dp"
+                android:id="@+id/tvWorkName"
+            android:textColor="@color/color1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+            android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/training"
+                android:gravity="center" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            app:layout_constraintTop_toBottomOf="@id/cvWrokName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/color2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/tvTitleWork"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_work"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvTitleRest"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                    android:id="@+id/tvTitleRest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_rest"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@id/tvTitleRound"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvTitleWork" />
+
+            <TextView
+                    android:id="@+id/tvTitleRound"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_repeat"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvTitleRest"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                    android:id="@+id/tvShowWork"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:text="23"
+                android:textColor="@color/color1"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTimer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvShowRest"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleWork" />
+
+            <TextView
+                    android:id="@+id/tvShowRest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:text="12"
+                    android:textColor="@color/color1"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@id/tvShowRound"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTimer"
+                    app:layout_constraintStart_toEndOf="@id/tvShowWork" />
+
+            <TextView
+                    android:id="@+id/tvShowRound"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:text="x3"
+                    android:textStyle="bold"
+                android:textColor="@color/color1"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTimer"
+                    app:layout_constraintStart_toEndOf="@id/tvShowRest"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleWork" />
+
+            <TextView
+                    android:id="@+id/tvTimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00:00"
+                android:textColor="@color/color1"
+                    android:textSize="48sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvPrep"
+                    tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                    android:id="@+id/tvPrep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="33sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="471dp"
+                    tools:text="Preparate"
+                    app:layout_constraintTop_toBottomOf="@id/tvTimer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <ImageButton
+            android:id="@+id/btnStart"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/play"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/color5"
+            app:layout_constraintEnd_toStartOf="@+id/btnPause"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvData" />
+
+    <ImageButton
+            android:id="@+id/btnPause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/pause"
+            app:layout_constraintEnd_toStartOf="@+id/btnReset"
+            app:layout_constraintStart_toEndOf="@id/btnStart"
+            app:layout_constraintTop_toBottomOf="@+id/cvData"
+            android:backgroundTint="@color/color5" />
+
+    <ImageButton
+            android:id="@+id/btnReset"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/color5"
+            android:background="@drawable/twotone_stop_circle_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnPause"
+            app:layout_constraintTop_toBottomOf="@+id/cvData" />
+
+    <TextView
+            android:id="@+id/tvScreenOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="6dp"
+            android:text="@string/screeOn"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddWork"
+            app:layout_constraintTop_toBottomOf="@+id/btnPause"
+            app:layout_constraintEnd_toStartOf="@+id/swScreenOn"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swScreenOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddWork"
+            app:layout_constraintTop_toBottomOf="@+id/btnPause"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvScreenOn" />
+
+    <Button
+            android:id="@+id/btnRemoveWork"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+        android:layout_marginHorizontal="60dp"
+            android:text="@string/delete_training"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+            android:id="@+id/btnAddWork"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+        android:layout_marginHorizontal="60dp"
+            android:text="@string/add_training"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnRemoveWork" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

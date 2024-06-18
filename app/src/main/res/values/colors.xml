@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+<!--    logyourclimbs-->
+    <color name="color1">#D0CEC2</color>
+    <color name="color2">#7BAA80</color>
+    <color name="color3">#4B6B5E</color>
+    <color name="color4">#BF9A41</color>
+    <color name="color5">#980019</color>
+    <color name="Flash">#FFEB3B</color>
+    <color name="Onsight">#000000</color>
+    <color name="Redpoint">#FF002A</color>
+</resources>

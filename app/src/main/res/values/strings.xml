@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">LogYourClimbs</string>
+    <string name="add_ascent">Añadir ascenso</string>
+    <string name="logbook">Cuaderno</string>
+    <string name="title">Registra tus vías</string>
+    <string name="countdown">Cuenta atrás</string>
+    <string name="name">Nombre</string>
+    <string name="grade">Grado</string>
+    <string name="logbook_title">Vías encadenadas</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="error_addRoute">Algo salió mal, revisa y completa todos los campos</string>
+    <string name="description">Descripción</string>
+    <string name="ascentdate">Fecha de ascenso</string>
+    <string name="how">Cómo lo has escalado?</string>
+    <string name="back">Volver</string>
+    <string name="flash">Flash</string>
+    <string name="onsight">A vista</string>
+    <string name="redpoin">Ensayado</string>
+    <string name="name_fill">Ingrese el nombre de la vía</string>
+    <string name="description_fill">Introduce una descripción de 100 carácteres</string>
+    <string name="date_fill">dd/mm/aaaa</string>
+    <string name="selectGrade_fill">Seleccione un grado</string>
+    <string name="dialogError">Algo ha salido mal, revisa los datros introducidos</string>
+    <string name="listEmpty">No hay vías guardadas, añade alguna usando el botón añadir</string>
+    <string name="filter">Filtrar por -></string>
+    <string name="statistics">Estadísticas</string>
+    <string name="password"> Contraseña</string>
+    <string name="confirm_password"> Confirmar contraseña</string>
+    <string name="signup">Registrarse</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="already_registered">Ya tienes cuenta? Inicia sesión</string>
+    <string name="signup_here">Aún sin cuenta? Regístrate aquí</string>
+    <string name="sort_by">Ordenar por</string>
+    <string name="filter_by">Filtrar por</string>
+    <string name="add_accept">Usuario creado correctamente! No olvides tu contraseña</string>
+    <string name="add_denied">Registo erroneo, revisa los campos</string>
+    <string name="login_ok">Inicio de sesión correcto!</string>
+    <string name="login_Fail">Usuario o contraseña incorrectos</string>
+    <string name="userAlreadyExists">El usuario ya existe</string>
+    <string name="export_success">Base de datos exportada corréctamente</string>
+    <string name="import_success">Base de datos importada corréctamente</string>
+    <string name="import_error">Error al importar la base de datos</string>
+    <string name="export_error">Error al exportar la base de datos</string>
+    <string name="export_bd">Exportar BD</string>
+    <string name="import_bd">Importar BD</string>
+    <string name="total_routes_done">Total vías encadenadas: %1$s</string>
+    <string name="training">Entrenamiento</string>
+    <string name="work">Tiempo de trabajo (Segundos)</string>
+    <string name="rest">Tiempo de descanso (Segundos)</string>
+    <string name="round">Número de repeticiones</string>
+    <string name="add_work">Añadir Entrenaminto</string>
+    <string name="title_work">Trabajo</string>
+    <string name="title_repeat">Repeticiones</string>
+    <string name="title_rest">Descanso</string>
+    <string name="add_training">Crear Entrenamiento</string>
+    <string name="delete_training">Eliminar Entrenamiento</string>
+    <string name="work_title">Título del entrenamiento</string>
+    <string name="finished">Finalizado</string>
+    <string name="ready">Prepárate</string>
+    <string name="delete_confirm">¿Seguro que quieres borrar el registro?</string>
+    <string name="cant_rollback">Esta acción no se puede deshacer.</string>
+    <string name="dont_implemented">Esta opción aún no está implementada :_(</string>
+    <string name="screeOn">Mantener pantalla activa</string>
+    <string name="loginWelcome">Inicio de Sesión</string>
+    <string name="signupWelcome">Registro de Usuario</string>
+    <string name="select_grade"><![CDATA[<-- Seleccione un grado]]></string>
+    <string-array name="grades_array">
+        <item>4</item>
+        <item>4+</item>
+        <item>5</item>
+        <item>5+</item>
+        <item>6a</item>
+        <item>6a+</item>
+        <item>6b</item>
+        <item>6b+</item>
+        <item>6c</item>
+        <item>6c+</item>
+        <item>7a</item>
+        <item>7a+</item>
+        <item>7b</item>
+        <item>7b+</item>
+        <item>7c</item>
+        <item>7c+</item>
+        <item>8a</item>
+        <item>8a+</item>
+        <item>8b</item>
+        <item>8b+</item>
+        <item>8c</item>
+        <item>8c+</item>
+        <item>9a</item>
+        <item>9a+</item>
+        <item>9b</item>
+        <item>9b+</item>
+        <item>9c</item>
+        <item>9c+</item>
+        <item>10a</item>
+    </string-array>
+
+</resources>
