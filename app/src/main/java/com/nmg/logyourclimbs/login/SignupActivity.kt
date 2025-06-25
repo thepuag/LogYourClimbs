@@ -42,22 +42,27 @@ class SignupActivity : AppCompatActivity() {
             if (TextUtils.isEmpty(signupUserName) || TextUtils.isEmpty(signupPassword) || TextUtils.isEmpty(signupCPassword)) {
                 aidFun.showToast("Rellene los campos correctamente.")
             } else {
-                // Si el usuario no existe
-                if (!checkUser) {
-                    // Verifico si las contraseñas coinciden
-                    if (signupPassword == signupCPassword) {
-                        // Registro el nuevo usuario
-                        sqliteDB.addUser(signupUserName, signupPassword)
-                        aidFun.showToast("Registrado correctamente")
-                        // Navego a la actividad de inicio de sesión
-                        val intent = Intent(this, LoginActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        aidFun.showToast("Las contraseñas no coinciden")
-                    }
+                // Verifico si la contraseña cumple con los requisitos
+                if (!isValidPassword(signupPassword)) {
+                    aidFun.showToast("La contraseña debe tener al menos 6 caracteres y contener letras y números.")
                 } else {
-                    aidFun.showToast("El usuario ya existe.")
+                    // Si el usuario no existe
+                    if (!checkUser) {
+                        // Verifico si las contraseñas coinciden
+                        if (signupPassword == signupCPassword) {
+                            // Registro el nuevo usuario
+                            sqliteDB.addUser(signupUserName, signupPassword)
+                            aidFun.showToast("Registrado correctamente")
+                            // Navego a la actividad de inicio de sesión
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            aidFun.showToast("Las contraseñas no coinciden")
+                        }
+                    } else {
+                        aidFun.showToast("El usuario ya existe.")
+                    }
                 }
             }
         }
@@ -68,5 +73,22 @@ class SignupActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+    }
+
+    /**
+     * Valida que la contraseña cumpla con los requisitos de seguridad:
+     * - Mínimo 6 caracteres
+     * - Contiene al menos una letra
+     * - Contiene al menos un número
+     */
+    private fun isValidPassword(password: String): Boolean {
+        if (password.length < 6) {
+            return false
+        }
+        
+        val hasLetter = password.any { it.isLetter() }
+        val hasDigit = password.any { it.isDigit() }
+        
+        return hasLetter && hasDigit
     }
 }
