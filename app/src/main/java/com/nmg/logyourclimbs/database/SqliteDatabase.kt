@@ -21,8 +21,8 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
     }
 
     // Declaración de constantes para las tablas y columnas de la base de datos
-    private val TABLE_ROUTES = "Routes"
-    private val COLUMN_ROUTE_ID = "routeID"
+    private val tableRoute = "Routes"
+    private val columnRouteId = "routeID"
     private val COLUMN_ROUTE_USER_ID = "routeUserID"
     private val COLUMN_ROUTE_NAME = "routeName"
     private val COLUMN_DESCRIPTION = "routeDescription"
@@ -41,7 +41,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
     val COLUMN_REST_TIME = "restTime"
     val COLUMN_ROUNDS = "rounds"
 
-    // Método onCreate: creación de tablas
+    // Metodo onCreate: creación de tablas
     override fun onCreate(db: SQLiteDatabase?) {
         val defineTableUsers =
             ("CREATE TABLE $TABLE_USERS (" +
@@ -50,8 +50,8 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
                     " $COLUMN_USER_PASSWORD TEXT" +
                     ")")
         val defineRoutesTable =
-            ("CREATE TABLE $TABLE_ROUTES (" +
-                    "$COLUMN_ROUTE_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            ("CREATE TABLE $tableRoute (" +
+                    "$columnRouteId INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "$COLUMN_ROUTE_NAME TEXT," +
                     "$COLUMN_DESCRIPTION TEXT," +
                     "$COLUMN_GRADE TEXT," +
@@ -75,15 +75,15 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         db?.execSQL(defineWorksTable)
     }
 
-    // Método onUpgrade: manejo de actualizaciones de la base de datos
+    // Metodo onUpgrade: manejo de actualizaciones de la base de datos
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db?.execSQL("DROP TABLE IF EXISTS $TABLE_ROUTES")
+        db?.execSQL("DROP TABLE IF EXISTS $tableRoute")
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_USERS")
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_WORKS")
         onCreate(db)
     }
 
-    // Método para leer un usuario con nombre y contraseña
+    // Metodo para leer un usuario con nombre y contrasenia
     fun readUser(userName: String, password: String): Boolean {
         val db = this.readableDatabase
         val sqlSelect =
@@ -97,7 +97,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return true
     }
 
-    // Método para verificar si un usuario existe
+    // Metodo para verificar si un usuario existe
     fun checkUser(userName: String): Boolean {
         val db = this.readableDatabase
         val sqlSelect =
@@ -111,7 +111,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return true
     }
 
-    // Método para añadir un nuevo usuario
+    // Metodo para añadir un nuevo usuario
     fun addUser(userName: String, password: String): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()
@@ -121,7 +121,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return resultDB != (-1).toLong()
     }
 
-    // Método para obtener el ID de un usuario por su nombre
+    // Metodo para obtener el ID de un usuario por su nombre
     @SuppressLint("Range")
     fun getUserId(name: String): Int {
         val db = this.readableDatabase
@@ -133,31 +133,33 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return userId
     }
 
-    // Método para listar las rutas de un usuario
+    // Metodo para listar las rutas de un usuario
     @SuppressLint("Range")
     fun listRoutes(userID: Int): ArrayList<Routes> {
         Log.d("noe", "userID en listRoutes() vale $userID")
-        val sqlQ = "SELECT * FROM $TABLE_ROUTES WHERE $COLUMN_ROUTE_USER_ID = ?"
+        val sqlQ = "SELECT * FROM $tableRoute WHERE $COLUMN_ROUTE_USER_ID = ?"
         val db = this.readableDatabase
         val storeRoutes = ArrayList<Routes>()
         val cursor = db.rawQuery(sqlQ, arrayOf(userID.toString()))
         if (cursor.moveToFirst()) {
             do {
+                val id = cursor.getInt(cursor.getColumnIndex(columnRouteId)) // Obtener el ID de la ruta
                 val name = cursor.getString(cursor.getColumnIndex(COLUMN_ROUTE_NAME))
                 val description = cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION))
                 val grade = cursor.getString(cursor.getColumnIndex(COLUMN_GRADE))
                 val howWas = cursor.getString(cursor.getColumnIndex(COLUMN_HOWWAS))
                 val date = cursor.getString(cursor.getColumnIndex(COLUMN_DATE))
-                storeRoutes.add(Routes(name, description, grade, howWas, date, userID))
+                // Usar el constructor que incluye el ID de la ruta
+                storeRoutes.add(Routes(id, name, description, grade, howWas, date, userID))
             } while (cursor.moveToNext())
         }
         cursor.close()
         return storeRoutes
     }
 
-    // Método para contar las rutas por grado
+    // Metodo para contar las rutas por grado
     fun countRouteGrades(userID: Int): Map<String, Int> {
-        val sqlQ = "SELECT $COLUMN_GRADE FROM $TABLE_ROUTES WHERE $COLUMN_ROUTE_USER_ID = ?"
+        val sqlQ = "SELECT $COLUMN_GRADE FROM $tableRoute WHERE $COLUMN_ROUTE_USER_ID = ?"
         val db = this.readableDatabase
         val routeGradesCount = HashMap<String, Int>()
         val cursor = db.rawQuery(sqlQ, arrayOf(userID.toString()))
@@ -178,17 +180,17 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return routeGradesCount.toSortedMap()
     }
 
-    // Método para obtener el número de rutas de un usuario
+    // Metodo para obtener el número de rutas de un usuario
     fun getNumberRoutes(userID: Int): Int {
         val db = this.readableDatabase
-        val sqlQ = "SELECT * FROM $TABLE_ROUTES WHERE $COLUMN_ROUTE_USER_ID = $userID"
+        val sqlQ = "SELECT * FROM $tableRoute WHERE $COLUMN_ROUTE_USER_ID = $userID"
         val cursor = db.rawQuery(sqlQ, null)
         val rowCount = cursor.count
         cursor.close()
         return rowCount
     }
 
-    // Método para añadir una nueva ruta
+    // Metodo para añadir una nueva ruta
     fun addRoutes(routes: Routes) {
         val values = contentValuesOf(
             COLUMN_ROUTE_NAME to routes.routeName,
@@ -199,7 +201,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
             COLUMN_ROUTE_USER_ID to routes.idUser
         )
         val db = this.writableDatabase
-        db.insert(TABLE_ROUTES, null, values)
+        db.insert(tableRoute, null, values)
         db.close()
     }
 
@@ -218,15 +220,15 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         )
     }*/
 
-    // Método para eliminar una ruta por ID
+    // Metodo para eliminar una ruta por ID
     fun deleteRoutes(id: Int) {
         val db = writableDatabase
         Log.d("Noe", "el id en deleteRoute() pasado es $id")
-        db.delete(TABLE_ROUTES, "$COLUMN_ROUTE_ID = ?", arrayOf(id.toString()))
+        db.delete(tableRoute, "$columnRouteId = ?", arrayOf(id.toString()))
         db.close()
     }
 
-    // Método para añadir un nuevo trabajo
+    // Metodo para añadir un nuevo trabajo
     fun addWork(works: Works) {
         val values = contentValuesOf(
             COLUMN_WORK_USER_ID to works.userId,
@@ -240,7 +242,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         db.close()
     }
 
-    // Método para obtener los títulos de trabajos de un usuario
+    // Metodo para obtener los títulos de trabajos de un usuario
     @SuppressLint("Range")
     fun getTitles(userID: Int): List<String> {
         val titles = ArrayList<String>()
@@ -256,7 +258,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return titles
     }
 
-    // Método para obtener los datos de un trabajo por título
+    // Metodo para obtener los datos de un trabajo por título
     @SuppressLint("Range")
     fun getWorkData(title: String): Map<String, Int>? {
         val db = this.readableDatabase
@@ -273,7 +275,7 @@ class SqliteDatabase internal constructor(context: Context?) : SQLiteOpenHelper(
         return null
     }
 
-    // Método para eliminar un trabajo por título
+    // Metodo para eliminar un trabajo por título
     fun deleteWorks(title: String) {
         val db = writableDatabase
         db.delete(TABLE_WORKS, "$COLUMN_TITLE = ?", arrayOf(title))

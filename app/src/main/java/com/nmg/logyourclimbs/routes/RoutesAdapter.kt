@@ -70,7 +70,7 @@ internal class RoutesAdapter(private val context: Context, listRoutes: ArrayList
         }
     }
 
-    // Método para eliminar una ruta de la lista
+    // Metodo para eliminar una ruta de la lista
     private fun removeRouteAt(position: Int) {
         listRoutes.removeAt(position)
         notifyItemRemoved(position)
